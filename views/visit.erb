@@ -11,23 +11,23 @@
 <form action="/visit" method="POST" role="form">
   <div class="form-group">
     <label>Ваше имя:</label>
-    <input name="user_name" type="text" class="form-control bbb" placeholder="Введите Ваше имя" value="<%=@user_name%>">
+    <input name="client[name]" type="text" class="form-control bbb" placeholder="Введите Ваше имя" value="">
   </div>
 
   <div class="form-group">
     <label>Телефон:</label>
-    <input id="aaa" name="user_phone" type="text" class="form-control" placeholder="Введите Ваш телефон" value="<%=@user_phone%>">
+    <input id="aaa" name="client[phone]" type="text" class="form-control" placeholder="Введите Ваш телефон" value="">
   </div>
 
   <div class="form-group">
     <label>Запись:</label>
-    <input id="datetimepicker" name="user_time" type="text" class="form-control" placeholder="Введите время записи" value="<%=@user_time%>">
+    <input id="datetimepicker" name="client[datestamp]" type="text" class="form-control" placeholder="Введите время записи" value="">
   </div>
 
   <div class="form-group">
     <label for="exampleFormControlSelect1">Ваш парикмахер:</label>
 
-    <select name="barber" class="form-control">
+    <select name="client[barber]" class="form-control">
 <!-- 
       <option <%= @barber == 'Александр Евгеньевич' ? 'selected' : '' %>>Александр Евгеньевич</option>
       <option <%= @barber == 'Лев Александрович' ? 'selected' : '' %>>Лев Александрович</option>
@@ -41,7 +41,7 @@
     </select>
   </div>
 
-    <select id="color" name="color">
+    <select id="color" name="client[color]">
       <option value="#7bd148">Green</option>
       <option value="#5484ed">Bold blue</option>
       <option value="#a4bdfc">Blue</option>
