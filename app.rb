@@ -35,7 +35,7 @@ post '/visit' do
 	c = Client.new
 	c.name = @user_name
 	c.phone = @user_phone
-	c.datastamp = @user_time
+	c.datestamp = @user_time
 	c.barber = @barber
 	c.color = @color
 	c.save
