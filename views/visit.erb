@@ -26,20 +26,15 @@
 
   <div class="form-group">
     <label for="exampleFormControlSelect1">Ваш парикмахер:</label>
+    <select name="client[barber]" class="form-control" value="<%= @c.barber %>">
 
-    <select name="client[barber]" class="form-control">
-<!-- 
-      <option <%= @barber == 'Александр Евгеньевич' ? 'selected' : '' %>>Александр Евгеньевич</option>
-      <option <%= @barber == 'Лев Александрович' ? 'selected' : '' %>>Лев Александрович</option>
-      <option <%= @barber == 'Дарья Олеговна' ? 'selected' : '' %>>Дарья Олеговна</option>
-      <option <%= @barber == 'Олег Евгеньевич' ? 'selected' : '' %>>Олег Евгеньевич</option>
-      <option <%= @barber == 'Елена Георгиевна' ? 'selected' : '' %>>Елена Георгиевна</option>
- -->
-      <% @barbers.each do |item| %>
-        <option <%= @barber == item['name'] ? 'selected' : '' %> ><%= item['name'] %></option>
+      <% @barbers.each do |barber| %>
+        <option <%= @c.barber == barber.name ? 'selected' : '' %>><%= barber.name %></option> <----- помогите расписать эту строку
       <% end %>
+
     </select>
   </div>
+
 
     <select id="color" name="client[color]">
       <option value="#7bd148">Green</option>
