@@ -9,7 +9,7 @@ set :database, "sqlite3:barbershop.db"
 
 class Client < ActiveRecord::Base
 	# параметры которые проверяются, или с ними что-то происходит
-	validates :name, presence: true # presence => true, пишется как хеш
+	validates :name, presence: true, length: {minimum: 2} # presence => true, пишется как хеш
 	validates :phone, presence: true
 	validates :datestamp, presence: true
 	validates :barber, presence: true
