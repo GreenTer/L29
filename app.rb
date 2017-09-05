@@ -19,7 +19,7 @@ end
 class Barber < ActiveRecord::Base
 end
 
-before do
+before do 
 	@barbers = Barber.all
 end
 
@@ -40,4 +40,19 @@ post '/visit' do
 		@error = @c.errors.full_messages.first
 		erb :visit
 	end
+end
+
+get	'/barber/:id' do
+	@barber = Barber.find(params[:id])
+	erb :barber
+end
+
+get '/clients' do
+	@client = Client.order('created_at DESC')
+	erb :clients
+end
+
+get	'/clients/:id' do
+	@client = Client.find(params[:id])
+	erb :client_page
 end
